@@ -1,0 +1,38 @@
+# Flutter 核心忽略
+/build/
+*.lock
+/.dart_tool/
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.packages
+.pub-cache/
+.pub/
+/build/
+
+# 编辑器配置
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# iOS 忽略
+ios/Pods/
+ios/.symlinks/
+ios/DerivedData/
+ios/build/
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Android 忽略
+android/.gradle/
+android/captures/
+android/build/
+android/local.properties
+android/key.properties  # 敏感的签名配置，务必忽略！
+
+# 敏感文件
+.env
+.env.*
