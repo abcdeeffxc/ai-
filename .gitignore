@@ -1,0 +1,131 @@
+
+
+# ================= 全局通用忽略规则 =================
+
+# 编辑器配置文件（适配VS Code、Android Studio等）
+
+.idea/
+
+.vscode/
+
+*.iml
+
+*.iws
+
+*.ipr
+
+.DS_Store  # macOS系统临时文件
+
+Thumbs.db  # Windows系统临时文件
+
+*.log       # 日志文件
+
+temp/       # 临时文件夹
+
+# ================= 后端（FastAPI/Python）忽略规则 =================
+
+# 虚拟环境（核心忽略，避免仓库臃肿）
+
+backend/venv/
+
+backend/.venv/
+
+backend/env/
+
+backend/.env/
+
+# Python编译缓存与字节码文件
+
+backend/__pycache__/
+
+backend/*.py[cod]
+
+backend/*$py.class
+
+backend/.python-version
+
+backend/*.so
+
+# 敏感配置文件（绝对禁止推送，防止信息泄露）
+
+backend/.env
+
+backend/.env.*
+
+backend/key.properties  # 若后端涉及签名配置
+
+# 后端依赖与工具缓存
+
+backend/.dart_tool/  # 若后端混用Dart工具
+
+backend/.pytest_cache/
+
+backend/.coverage
+
+backend/htmlcov/
+
+# ================= 前端（Flutter）忽略规则 =================
+
+# Flutter编译产物与缓存
+
+frontend/build/
+
+frontend/.flutter-plugins
+
+frontend/.flutter-plugins-dependencies
+
+frontend/.packages
+
+frontend/.dart_tool/
+
+frontend/build.log
+
+# iOS端冗余文件
+
+frontend/ios/Pods/
+
+frontend/ios/.symlinks/
+
+frontend/ios/DerivedData/
+
+frontend/ios/build/
+
+frontend/ios/Runner/GeneratedPluginRegistrant.*
+
+frontend/ios/Podfile.lock  # 可选，若团队需统一Pod版本可保留
+
+# Android端冗余文件
+
+frontend/android/.gradle/
+
+frontend/android/build/
+
+frontend/android/captures/
+
+frontend/android/local.properties
+
+frontend/android/key.properties  # 安卓签名配置，敏感文件
+
+# Flutter运行缓存
+
+frontend/.fvm/  # 若使用Flutter版本管理工具
+
+frontend/flutter_export_environment.sh
+
+frontend/flutter_01.png  # 截图缓存
+
+# ================= 其他补充忽略 =================
+
+# 打包文件与压缩包
+
+*.apk
+
+*.ipa
+
+*.zip
+
+*.tar.gz
+
+# 避免空文件夹被Git追踪（如需保留空文件夹，可在文件夹内创建.gitkeep）
+
+!*.gitkeep
