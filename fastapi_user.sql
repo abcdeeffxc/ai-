@@ -1,0 +1,20 @@
+CREATE DATABASE IF NOT EXISTS fastapi_user_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE fastapi_user_db;
+DROP TABLE IF EXISTS sys_user;
+CREATE TABLE sys_user (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '用户主键ID',
+  email VARCHAR(100) NOT NULL COMMENT '用户邮箱/登录账号',
+  password VARCHAR(255) NOT NULL COMMENT '加盐加密后的密码密文',
+  create_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '注册时间',
+  update_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (id),
+  UNIQUE KEY uk_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户信息表';
+
+ALTER TABLE sys_user ADD COLUMN is_active TINYINT(1) DEFAULT 0 COMMENT '是否激活：0未激活，1已激活';
+
+-- 新增昵称、头像、兴趣列表字段，适配本次修改功能，执行一次即可
+ALTER TABLE sys_user 
+ADD COLUMN nickname VARCHAR(50) DEFAULT '默认用户' COMMENT '用户昵称' AFTER password,
+ADD COLUMN avatar VARCHAR(255) DEFAULT '' COMMENT '用户头像存储路径' AFTER nickname,
+ADD COLUMN hobby_list VARCHAR(500) DEFAULT '' COMMENT '兴趣爱好列表，逗号分隔' AFTER avatar;

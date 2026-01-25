@@ -1,38 +1,251 @@
-# Flutter 核心忽略
+# Flutter build
 /build/
+/ios/Flutter/flutter_assets/
+
+# Android
+/android/.gradle
+/android/gradle
+/android/gradlew
+/android/gradlew.bat
+/android/local.properties
+/android/key.properties
+/android/app/google-services.json
+/android/app/src/main/res/values/keystore.properties
+/android/app/src/main/res/values/signing.properties
+
+# iOS
+/ios/.symlinks
+/ios/Flutter/Generated.xcconfig
+/ios/Flutter/AppFrameworkInfo.plist
+/ios/Pods
+/ios/pod_key.properties
+/ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
+/ios/Runner.xcodeproj/xcuserdata/
+/ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+
+# Temporary files
+*.rbc
+*.pbxuser
+*.perspectivev3
 *.lock
-/.dart_tool/
-/.flutter-plugins
-/.flutter-plugins-dependencies
-/.packages
+*.swp
+*.swo
+*~
+.DS_Store
+.atom/
+.brackets/
+.idea/
+*.tm_preferences
+nbproject/
+*.fdb_lock
+*.un~
+Session.vim
+Session.viminfo
+*.swx
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.com.apple.timemachine.supported
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# dart & flutter
+.dart_tool/
+.packages
 .pub-cache/
 .pub/
-/build/
+generated_plugin_registrant.dart
 
-# 编辑器配置
-.idea/
-*.iml
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# iOS 忽略
-ios/Pods/
-ios/.symlinks/
-ios/DerivedData/
-ios/build/
-ios/Runner/GeneratedPluginRegistrant.*
-
-# Android 忽略
-android/.gradle/
-android/captures/
-android/build/
-android/local.properties
-android/key.properties  # 敏感的签名配置，务必忽略！
-
-# 敏感文件
+# secrets
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config/env.ts
+config/env.js
+*.env
 .env.*
+
+# Local configuration
+**/local.properties
+**/key.json
+**/keys.json
+**/secret.json
+**/secrets.json
+**/credentials.json
+**/credentials.yml
+**/credentials.yaml
+**/oauth-*.json
+**/google-services.json
+**/app_settings.json
+**/app_config.json
+**/config.json
+**/config.private.json
+
+# Sensitive files
+**/tokens.json
+**/token.json
+**/jwt.json
+**/auth.json
+**/password.txt
+**/pwd.txt
+**/passwd.txt
+**/shadow.txt
+**/ssh/
+**/.ssh/
+**/id_rsa
+**/id_dsa
+**/known_hosts
+**/authorized_keys
+**/config.json
+**/config.yaml
+**/config.yml
+**/local_config.json
+**/local_config.yaml
+**/local_config.yml
+
+# Storage
+**/storage/
+**/tmp/
+**/temp/
+
+# IDE
+.vscode/
+.settings/
+.metadata/
+*.tmproj
+*.sublime-project
+*.sublime-workspace
+
+# Mobile development
+**/platforms/
+**/plugins/
+**/ionic.config.json
+**/ionic.project
+**/capacitor.config.json
+**/capacitor.config.ts
+
+# Database
+*.sqlite
+*.sqlite3
+**/database.json
+**/db.json
+**/data.db
+**/db.sqlite
+**/db.sqlite3
+
+# API keys and secrets
+**/api_key.json
+**/apikey.json
+**/api-keys.json
+**/api_keys.json
+**/secret_key.json
+**/secret-key.json
+**/private.key
+**/private.pem
+**/public.key
+**/public.pem
+**/certificate.p12
+**/certificate.pfx
+**/certs/
+**/certificates/
+
+# User-specific files
+**/user_info/
+**/user_data/
+**/user-data/
+**/userdata/
+
+# Cache directories
+**/node_modules
+**/.cache/
+**/cache/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.metadata
+
+# Test artifacts
+**/test/fixtures/
+**/test/integration/fixtures/
+**/tests/__snapshots__/
+**/tests/__image_snapshots__/
+
+# Compiled files
+**/*.pyc
+**/*.pyo
+**/*.jar
+**/*.war
+**/*.class
+**/*.o
+**/*.so
+**/*.dll
+**/*.dylib
+
+# IDE generated files
+**/.vs/
+**/nbproject/private/
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/dictionaries/
+**/.idea/libraries/
+**/shims/
+**/typings/
+
+# OS generated files
+**/Thumbs.db
+**/ehthumbs.db
+**/Icon?
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs_vista.db
+**/.fseventsd
+**/desktop.ini
+
+# Environment specific
+**/android/local.properties
+**/ios/Flutter/.symlinks
+**/ios/Pods/.symlinks
+**/packages/flutter_tools/.pub
+**/packages/flutter_tools/bin/cache/
+**/windows/Flutter/ephemeral/
+**/linux/Flutter/ephemeral/
+**/macos/Flutter/ephemeral/
